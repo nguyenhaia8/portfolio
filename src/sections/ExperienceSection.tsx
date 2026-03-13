@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion'
-import { Badge } from '../components/Badge'
-import { Card } from '../components/Card'
-import { SectionHeading } from '../components/SectionHeading'
-import { Section } from './Section'
+import { motion } from "framer-motion";
+import { Badge } from "../components/Badge";
+import { Card } from "../components/Card";
+import { SectionHeading } from "../components/SectionHeading";
+import { Section } from "./Section";
 
 export function ExperienceSection() {
   return (
@@ -17,7 +17,7 @@ export function ExperienceSection() {
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-20% 0px -10% 0px' }}
+          viewport={{ once: true, margin: "-20% 0px -10% 0px" }}
           transition={{ duration: 0.45 }}
         >
           <Card className="p-6">
@@ -25,11 +25,13 @@ export function ExperienceSection() {
               <div>
                 <p className="text-base font-semibold tracking-tight">
                   Frontend Engineer — VNG Corporation
+                  <img src="" alt="" />
                 </p>
-                <p className="mt-1 text-sm text-muted">2020–2025</p>
+                <p className="mt-1 text-sm text-muted">2022–2025</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 <Badge>React</Badge>
+                <Badge>Next.js</Badge>
                 <Badge>TypeScript</Badge>
                 <Badge>Performance</Badge>
                 <Badge>Design systems</Badge>
@@ -69,8 +71,12 @@ export function ExperienceSection() {
                     Highlights
                   </p>
                   <ul className="mt-3 space-y-2 text-sm text-muted">
-                    <li>• Faster critical flows with measurable performance wins</li>
-                    <li>• Strong handoff and collaboration with design systems</li>
+                    <li>
+                      • Faster critical flows with measurable performance wins
+                    </li>
+                    <li>
+                      • Strong handoff and collaboration with design systems
+                    </li>
                     <li>• Ownership mindset from scope to delivery</li>
                   </ul>
                 </div>
@@ -80,6 +86,5 @@ export function ExperienceSection() {
         </motion.div>
       </div>
     </Section>
-  )
+  );
 }
-
