@@ -1,54 +1,66 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useMemo, useState } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiMenu, FiX } from 'react-icons/fi'
-import { cn } from '../lib/cn'
-import { Container } from './Container'
-import { IconButton } from './IconButton'
-import { ThemeToggle } from './ThemeToggle'
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import { FiGithub, FiLinkedin, FiMail, FiMenu, FiX } from "react-icons/fi";
+import { cn } from "../lib/cn";
+import { Container } from "./Container";
+import { IconButton } from "./IconButton";
+import { ThemeToggle } from "./ThemeToggle";
 
-type NavItem = { id: string; label: string }
+type NavItem = { id: string; label: string };
 
 const nav: NavItem[] = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'contact', label: 'Contact' },
-]
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
 
 function scrollToId(id: string) {
-  const el = document.getElementById(id)
-  if (!el) return
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 export function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false)
-    }
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
-  }, [])
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const socials = useMemo(
     () => [
-      { label: 'Email', href: 'mailto:thanhhai.felix.nguyen@gmail.com', icon: <FiMail /> },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thanhhai-nguyen/', icon: <FiLinkedin /> },
-      { label: 'GitHub', href: 'https://github.com/nguyenhaia8/', icon: <FiGithub /> },
+      {
+        label: "Email",
+        href: "mailto:thanhhai.felix.nguyen@gmail.com",
+        icon: <FiMail />,
+      },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/thanhhai-nguyen/",
+        icon: <FiLinkedin />,
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/nguyenhaia8/",
+        icon: <FiGithub />,
+      },
     ],
-    [],
-  )
+    []
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b border-subtle bg-[rgba(var(--bg-rgb),0.72)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(var(--bg-rgb),0.58)]">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <button
-            onClick={() => scrollToId('home')}
+            onClick={() => scrollToId("home")}
             className="focus-ring group inline-flex items-center gap-2 rounded-xl px-2 py-1"
           >
             <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-xl border border-subtle bg-[var(--card)]">
@@ -58,7 +70,7 @@ export function Navbar() {
               Hai Nguyen
             </span>
             <span className="hidden text-sm text-white font-medium sm:inline">
-              · Frontend Engineer
+              · Software Engineer
             </span>
           </button>
 
@@ -80,8 +92,8 @@ export function Navbar() {
                 <a
                   key={s.label}
                   href={s.href}
-                  target={s.href.startsWith('http') ? '_blank' : undefined}
-                  rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
+                  rel={s.href.startsWith("http") ? "noreferrer" : undefined}
                   className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-xl border-[2px] border-subtle bg-[var(--card)] text-[var(--card-fg)] transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--fg)]"
                   aria-label={s.label}
                   title={s.label}
@@ -93,7 +105,7 @@ export function Navbar() {
             <ThemeToggle />
             <div className="md:hidden">
               <IconButton
-                label={open ? 'Close menu' : 'Open menu'}
+                label={open ? "Close menu" : "Open menu"}
                 icon={open ? <FiX /> : <FiMenu />}
                 onClick={() => setOpen((v) => !v)}
               />
@@ -106,7 +118,7 @@ export function Navbar() {
         {open ? (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.22 }}
             className="md:hidden"
@@ -118,12 +130,12 @@ export function Navbar() {
                     <button
                       key={item.id}
                       onClick={() => {
-                        scrollToId(item.id)
-                        setOpen(false)
+                        scrollToId(item.id);
+                        setOpen(false);
                       }}
                       className={cn(
-                        'focus-ring rounded-xl px-3 py-2 text-left text-sm transition',
-                        'text-[var(--card-fg)] hover:bg-[rgba(var(--fg-rgb),0.06)]',
+                        "focus-ring rounded-xl px-3 py-2 text-left text-sm transition",
+                        "text-[var(--card-fg)] hover:bg-[rgba(var(--fg-rgb),0.06)]"
                       )}
                     >
                       {item.label}
@@ -135,8 +147,12 @@ export function Navbar() {
                       <a
                         key={s.label}
                         href={s.href}
-                        target={s.href.startsWith('http') ? '_blank' : undefined}
-                        rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
+                        target={
+                          s.href.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          s.href.startsWith("http") ? "noreferrer" : undefined
+                        }
                         className="focus-ring inline-flex items-center gap-2 rounded-xl border border-subtle px-3 py-2 text-sm text-muted transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--fg)]"
                       >
                         {s.icon}
@@ -151,6 +167,5 @@ export function Navbar() {
         ) : null}
       </AnimatePresence>
     </header>
-  )
+  );
 }
-

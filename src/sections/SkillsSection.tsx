@@ -9,6 +9,9 @@ import {
   SiJavascript,
   SiJest,
   SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
   SiReact,
   SiTailwindcss,
   SiTypescript,
@@ -59,7 +62,7 @@ export function SkillsSection() {
       />
 
       <div className="grid gap-10">
-        <Category title="Frontend">
+        <Category title="Core skills">
           <SkillCard title="React" icon={<SiReact />} />
           <SkillCard title="Next.js" icon={<SiNextdotjs />} />
           <SkillCard title="TypeScript" icon={<SiTypescript />} />
@@ -67,6 +70,9 @@ export function SkillsSection() {
           <SkillCard title="HTML5" icon={<SiHtml5 />} />
           <SkillCard title="CSS3" icon={<SiCss />} />
           <SkillCard title="TailwindCSS" icon={<SiTailwindcss />} />
+          <SkillCard title="Node.js" icon={<SiNodedotjs />} />
+          <SkillCard title="Express.js" icon={<SiExpress />} />
+          <SkillCard title="MongoDB" icon={<SiMongodb />} />
         </Category>
 
         <Category title="Tools">

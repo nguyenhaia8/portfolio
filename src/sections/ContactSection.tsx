@@ -1,24 +1,24 @@
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiSend } from 'react-icons/fi'
-import { Button } from '../components/Button'
-import { Card } from '../components/Card'
-import { SectionHeading } from '../components/SectionHeading'
-import { Section } from './Section'
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { FiGithub, FiLinkedin, FiMail, FiSend } from "react-icons/fi";
+import { Button } from "../components/Button";
+import { Card } from "../components/Card";
+import { SectionHeading } from "../components/SectionHeading";
+import { Section } from "./Section";
 
 type FormState = {
-  name: string
-  email: string
-  message: string
-}
+  name: string;
+  email: string;
+  message: string;
+};
 
 export function ContactSection() {
-  const [status, setStatus] = useState<'idle' | 'sent'>('idle')
+  const [status, setStatus] = useState<"idle" | "sent">("idle");
   const [form, setForm] = useState<FormState>({
-    name: '',
-    email: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
   return (
     <Section id="contact">
@@ -66,7 +66,7 @@ export function ContactSection() {
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-20% 0px -10% 0px' }}
+          viewport={{ once: true, margin: "-20% 0px -10% 0px" }}
           transition={{ duration: 0.45 }}
           className="lg:col-span-7"
         >
@@ -77,10 +77,10 @@ export function ContactSection() {
             <form
               className="mt-4 grid gap-3"
               onSubmit={(e) => {
-                e.preventDefault()
-                setStatus('sent')
-                setTimeout(() => setStatus('idle'), 2500)
-                setForm({ name: '', email: '', message: '' })
+                e.preventDefault();
+                setStatus("sent");
+                setTimeout(() => setStatus("idle"), 2500);
+                setForm({ name: "", email: "", message: "" });
               }}
             >
               <div className="grid gap-3 sm:grid-cols-2">
@@ -89,7 +89,9 @@ export function ContactSection() {
                   <input
                     required
                     value={form.name}
-                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, name: e.target.value }))
+                    }
                     className="focus-ring h-11 rounded-xl border border-subtle bg-[var(--card)] px-3 text-sm"
                     placeholder="Your name"
                   />
@@ -100,7 +102,9 @@ export function ContactSection() {
                     required
                     type="email"
                     value={form.email}
-                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, email: e.target.value }))
+                    }
                     className="focus-ring h-11 rounded-xl border border-subtle bg-[var(--card)] px-3 text-sm"
                     placeholder="you@company.com"
                   />
@@ -111,20 +115,16 @@ export function ContactSection() {
                 <textarea
                   required
                   value={form.message}
-                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, message: e.target.value }))
+                  }
                   className="focus-ring min-h-[140px] resize-none rounded-xl border border-subtle bg-[var(--card)] p-3 text-sm"
                   placeholder="Tell me about the role or project..."
                 />
               </label>
 
               <div className="mt-2 flex items-center justify-between gap-3">
-                <p className="text-sm text-muted">
-                  {status === 'sent' ? (
-                    <span className="text-[var(--fg)]">Message ready to send (demo).</span>
-                  ) : (
-                    'This form is a lightweight demo—wire it to your backend when ready.'
-                  )}
-                </p>
+                <p className="text-sm text-muted">{status ? "" : ""}</p>
                 <Button type="submit">
                   Send <FiSend />
                 </Button>
@@ -134,6 +134,5 @@ export function ContactSection() {
         </motion.div>
       </div>
     </Section>
-  )
+  );
 }
-

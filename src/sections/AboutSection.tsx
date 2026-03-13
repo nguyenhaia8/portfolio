@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import { Card } from '../components/Card'
-import { SectionHeading } from '../components/SectionHeading'
-import { Section } from './Section'
+import { motion } from "framer-motion";
+import { Card } from "../components/Card";
+import { SectionHeading } from "../components/SectionHeading";
+import { Section } from "./Section";
 
 export function AboutSection() {
   return (
@@ -16,18 +16,21 @@ export function AboutSection() {
         <Card className="p-6 lg:col-span-7">
           <div className="space-y-4 text-left text-sm text-muted sm:text-base">
             <p>
-              I’m a frontend engineer with <span className="text-[var(--custom)] font-medium">5+ years</span>{' '}
+              I’m a software engineer with{" "}
+              <span className="text-[var(--custom)] font-medium">5+ years</span>{" "}
               of experience building modern web apps with React, TypeScript, and
               the broader JavaScript ecosystem. I’ve shipped scalable
-              user-facing features across industries like e-commerce, blockchain,
-              and gaming.
+              user-facing features across industries like e-commerce,
+              blockchain, and gaming.
             </p>
             <p>
               I specialize in building design systems, component libraries, and
-              high-performance UI workflows. I’m especially focused on{' '}
-              <span className="text-[var(--custom)] font-medium">Core Web Vitals</span>, runtime efficiency, and
-              maintainable code patterns that help teams move fast without
-              breaking quality.
+              high-performance UI workflows. I’m especially focused on{" "}
+              <span className="text-[var(--custom)] font-medium">
+                Core Web Vitals
+              </span>
+              , runtime efficiency, and maintainable code patterns that help
+              teams move fast without breaking quality.
             </p>
             <p>
               I’ve worked closely with designers and backend engineers to
@@ -41,7 +44,7 @@ export function AboutSection() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-20% 0px -10% 0px' }}
+            viewport={{ once: true, margin: "-20% 0px -10% 0px" }}
             transition={{ duration: 0.5 }}
             className="grid gap-4"
           >
@@ -51,14 +54,14 @@ export function AboutSection() {
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {[
-                  'React',
-                  'Next.js',
-                  'Redux',
-                  'TypeScript',
-                  'REST APIs',
-                  'AWS',
-                  'Docker',
-                  'CI/CD',
+                  "React",
+                  "Next.js",
+                  "Redux",
+                  "TypeScript",
+                  "REST APIs",
+                  "AWS",
+                  "Docker",
+                  "CI/CD",
                 ].map((t) => (
                   <span
                     key={t}
@@ -75,8 +78,12 @@ export function AboutSection() {
                 What you can expect
               </p>
               <ul className="mt-4 space-y-2 text-left text-sm text-muted">
-                <li>• Production-ready UI craft and strong component hygiene</li>
-                <li>• Thoughtful trade-offs and clear technical communication</li>
+                <li>
+                  • Production-ready UI craft and strong component hygiene
+                </li>
+                <li>
+                  • Thoughtful trade-offs and clear technical communication
+                </li>
                 <li>• Ownership mindset with measurable performance wins</li>
               </ul>
             </Card>
@@ -84,6 +91,5 @@ export function AboutSection() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
-

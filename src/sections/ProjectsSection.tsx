@@ -7,6 +7,7 @@ import { SectionHeading } from "../components/SectionHeading";
 import { Section } from "./Section";
 import vnggamesshop from "../assets/image/vnggamesshop.png";
 import vnggamesclub from "../assets/image/vnggamesclub.png";
+import speakingapp from "../assets/image/speakingapp.png";
 
 type Project = {
   title: string;
@@ -30,6 +31,13 @@ const projects: Project[] = [
       "A loyalty and rewards platform for the VNGGames ecosystem that allows gamers to track membership levels, redeem rewards, and access exclusive promotions.",
     image: vnggamesclub,
     demo: "https://club.vnggames.com/",
+  },
+  {
+    title: "Speaking App",
+    description:
+      "An interactive speaking practice application designed to help users improve pronunciation and fluency. The app provides structured speaking prompts, real-time recording, and playback features so learners can review and refine their responses.",
+    image: speakingapp,
+    github: "https://github.com/nguyenhaia8/speakingapp",
   },
 ];
 

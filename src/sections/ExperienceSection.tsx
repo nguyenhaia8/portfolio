@@ -24,7 +24,7 @@ export function ExperienceSection() {
             <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
               <div>
                 <p className="text-base font-semibold tracking-tight">
-                  Frontend Engineer — VNG Corporation
+                  Software Engineer — VNG Corporation
                   <img src="" alt="" />
                 </p>
                 <p className="mt-1 text-sm text-muted">2022–2025</p>

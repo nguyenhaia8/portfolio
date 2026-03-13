@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion'
-import { FiArrowRight, FiDownload, FiMail } from 'react-icons/fi'
-import { Badge } from '../components/Badge'
-import { Button } from '../components/Button'
-import { Section } from './Section'
+import { motion } from "framer-motion";
+import { FiArrowRight, FiDownload, FiMail } from "react-icons/fi";
+import { Badge } from "../components/Badge";
+import { Button } from "../components/Button";
+import { Section } from "./Section";
 
 function scrollToId(id: string) {
-  const el = document.getElementById(id)
-  if (!el) return
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 export function HeroSection() {
@@ -24,31 +24,36 @@ export function HeroSection() {
             <Badge className="border-none bg-[var(--primary)] text-white shadow-sm text-[14px]">
               Available for US-based roles
             </Badge>
-            {/* <Badge className="border-none bg-[var(--primary)] text-white shadow-sm">
-              React · Next.js · TypeScript
-            </Badge> */}
             <Badge className="bg-[rgba(var(--bg-rgb),0.85)] text-[var(--fg)] text-[14px]">
-              React · TypeScript · UI Engineering
+              React · Next.js · TypeScript
             </Badge>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.05, ease: [0.2, 0.8, 0.2, 1] }}
+            transition={{
+              duration: 0.75,
+              delay: 0.05,
+              ease: [0.2, 0.8, 0.2, 1],
+            }}
             className="mt-5 text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
           >
             Hai Nguyen
-            <span className="block text-muted">Frontend Engineer</span>
+            <span className="block text-muted">Software Engineer</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.2, 0.8, 0.2, 1] }}
+            transition={{
+              duration: 0.7,
+              delay: 0.12,
+              ease: [0.2, 0.8, 0.2, 1],
+            }}
             className="mt-5 max-w-xl text-pretty text-base text-muted sm:text-lg"
           >
-            Frontend Engineer with 5+ years of experience building scalable and
+            Software Engineer with 5+ years of experience building scalable and
             high-performance web applications.
           </motion.p>
 
@@ -58,16 +63,16 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.18 }}
             className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <Button onClick={() => scrollToId('projects')}>
+            <Button onClick={() => scrollToId("projects")}>
               View Projects <FiArrowRight className="text-base" />
             </Button>
             <Button
               variant="secondary"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open("/resume.pdf", "_blank")}
             >
               Download Resume <FiDownload className="text-base" />
             </Button>
-            <Button variant="ghost" onClick={() => scrollToId('contact')}>
+            <Button variant="ghost" onClick={() => scrollToId("contact")}>
               Contact Me <FiMail className="text-base" />
             </Button>
           </motion.div>
@@ -83,7 +88,9 @@ export function HeroSection() {
               Open to interviews
             </span>
             <span className="hidden h-1 w-1 rounded-full bg-[var(--border)] sm:inline" />
-            <span>Focus: performance, UX polish, maintainable architecture</span>
+            <span>
+              Focus: performance, UX polish, maintainable architecture
+            </span>
           </motion.div>
         </div>
 
@@ -122,6 +129,5 @@ export function HeroSection() {
         </div>
       </div>
     </Section>
-  )
+  );
 }
-
