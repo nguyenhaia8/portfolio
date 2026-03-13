@@ -36,28 +36,28 @@ export function Navbar() {
 
   const socials = useMemo(
     () => [
-      { label: 'Email', href: 'mailto:hai.nguyen@example.com', icon: <FiMail /> },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hai-nguyen', icon: <FiLinkedin /> },
-      { label: 'GitHub', href: 'https://github.com/hai-nguyen', icon: <FiGithub /> },
+      { label: 'Email', href: 'mailto:thanhhai.felix.nguyen@gmail.com', icon: <FiMail /> },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/thanhhai-nguyen/', icon: <FiLinkedin /> },
+      { label: 'GitHub', href: 'https://github.com/nguyenhaia8/', icon: <FiGithub /> },
     ],
     [],
   )
 
   return (
-    <header className="sticky top-0 z-50 border-b border-subtle bg-[rgba(var(--bg),0.72)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(var(--bg),0.58)]">
+    <header className="sticky top-0 z-50 border-b border-subtle bg-[rgba(var(--bg-rgb),0.72)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(var(--bg-rgb),0.58)]">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <button
             onClick={() => scrollToId('home')}
             className="focus-ring group inline-flex items-center gap-2 rounded-xl px-2 py-1"
           >
-            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-xl border border-subtle bg-[rgb(var(--card))]">
-              <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-[rgb(var(--primary))] to-[rgb(var(--primary-2))]" />
+            <span className="relative inline-flex h-7 w-7 items-center justify-center rounded-xl border border-subtle bg-[var(--card)]">
+              <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--primary-2)]" />
             </span>
             <span className="text-sm font-semibold tracking-tight text-white">
               Hai Nguyen
             </span>
-            <span className="hidden text-sm text-slate-200 sm:inline">
+            <span className="hidden text-sm text-white font-medium sm:inline">
               · Frontend Engineer
             </span>
           </button>
@@ -67,7 +67,7 @@ export function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToId(item.id)}
-                className="focus-ring rounded-xl px-3 py-2 text-sm text-white/80 transition hover:bg-white/10 hover:text-white"
+                className="focus-ring rounded-xl px-3 py-2 text-sm text-white transition hover:bg-white/10 hover:text-white font-medium"
               >
                 {item.label}
               </button>
@@ -82,7 +82,7 @@ export function Navbar() {
                   href={s.href}
                   target={s.href.startsWith('http') ? '_blank' : undefined}
                   rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-xl border border-subtle bg-[rgb(var(--card))] text-[rgb(var(--card-fg))] transition hover:bg-[rgba(var(--fg),0.06)]"
+                  className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-xl border-[2px] border-subtle bg-[var(--card)] text-[var(--card-fg)] transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--fg)]"
                   aria-label={s.label}
                   title={s.label}
                 >
@@ -113,7 +113,7 @@ export function Navbar() {
           >
             <Container>
               <div className="pb-4">
-                <div className="grid gap-1 rounded-2xl border border-subtle bg-[rgb(var(--card))] p-2">
+                <div className="grid gap-1 rounded-2xl border border-subtle bg-[var(--card)] p-2">
                   {nav.map((item) => (
                     <button
                       key={item.id}
@@ -123,13 +123,13 @@ export function Navbar() {
                       }}
                       className={cn(
                         'focus-ring rounded-xl px-3 py-2 text-left text-sm transition',
-                        'text-[rgb(var(--card-fg))] hover:bg-[rgba(var(--fg),0.06)]',
+                        'text-[var(--card-fg)] hover:bg-[rgba(var(--fg-rgb),0.06)]',
                       )}
                     >
                       {item.label}
                     </button>
                   ))}
-                  <div className="my-1 h-px bg-[rgb(var(--border))]" />
+                  <div className="my-1 h-px bg-[var(--border)]" />
                   <div className="flex flex-wrap gap-2 px-1 pb-1">
                     {socials.map((s) => (
                       <a
@@ -137,7 +137,7 @@ export function Navbar() {
                         href={s.href}
                         target={s.href.startsWith('http') ? '_blank' : undefined}
                         rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
-                        className="focus-ring inline-flex items-center gap-2 rounded-xl border border-subtle px-3 py-2 text-sm text-muted transition hover:bg-[rgba(var(--fg),0.06)] hover:text-[rgb(var(--fg))]"
+                        className="focus-ring inline-flex items-center gap-2 rounded-xl border border-subtle px-3 py-2 text-sm text-muted transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--fg)]"
                       >
                         {s.icon}
                         {s.label}

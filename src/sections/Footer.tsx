@@ -22,7 +22,7 @@ export function Footer() {
                 href={l.href}
                 target={l.href.startsWith('http') ? '_blank' : undefined}
                 rel={l.href.startsWith('http') ? 'noreferrer' : undefined}
-                className="focus-ring inline-flex items-center gap-2 rounded-xl border border-subtle bg-[rgba(var(--fg),0.03)] px-3 py-2 text-sm text-muted transition hover:bg-[rgba(var(--fg),0.06)] hover:text-[rgb(var(--fg))]"
+                className="focus-ring inline-flex items-center gap-2 rounded-xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] px-3 py-2 text-sm text-muted transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--fg)]"
               >
                 {l.icon}
                 {l.label}

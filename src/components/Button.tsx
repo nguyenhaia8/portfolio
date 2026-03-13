@@ -19,15 +19,15 @@ export function Button({
     <button
       {...props}
       className={cn(
-        'focus-ring inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-colors duration-200',
-        'active:translate-y-[1px] disabled:pointer-events-none disabled:opacity-50',
+        'focus-ring inline-flex items-center justify-center gap-2 rounded-xl font-medium transition duration-200',
+        'hover:translate-y-[-4px] active:translate-y-[1px] disabled:pointer-events-none disabled:opacity-50',
         size === 'sm' ? 'h-9 px-3 text-sm' : 'h-11 px-4 text-sm',
         variant === 'primary' &&
-          'bg-[rgb(var(--primary))] text-white shadow-[var(--shadow)] hover:bg-[rgb(var(--primary-2))]',
+          'bg-[var(--primary)] text-white shadow-[var(--shadow)] hover:shadow-xl',
         variant === 'secondary' &&
-          'border border-subtle bg-[rgb(var(--card))] text-[rgb(var(--card-fg))] hover:bg-[rgba(var(--fg),0.04)]',
+          'border border-subtle bg-[var(--card)] text-[var(--card-fg)] hover:bg-[rgba(var(--fg-rgb),0.04)] hover:shadow-md hover:text-[var(--custom)]',
         variant === 'ghost' &&
-          'text-[rgb(var(--fg))] hover:bg-[rgba(var(--fg),0.06)]',
+          'text-[var(--fg)] hover:bg-[rgba(var(--fg-rgb),0.06)] hover:shadow-sm',
         className,
       )}
     />

@@ -35,13 +35,13 @@ export function ContactSection() {
           </p>
           <div className="mt-4 grid gap-3 text-left text-sm">
             <a
-              className="focus-ring inline-flex items-center gap-3 rounded-xl border border-subtle bg-[rgba(var(--fg),0.03)] p-3 text-muted transition hover:bg-[rgba(var(--fg),0.06)] hover:text-[rgb(var(--fg))]"
+              className="focus-ring inline-flex items-center gap-3 rounded-xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] p-3 text-muted transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--custom)]"
               href="mailto:thanhhai.felix.nguyen@gmail.com"
             >
               <FiMail /> thanhhai.felix.nguyen@gmail.com
             </a>
             <a
-              className="focus-ring inline-flex items-center gap-3 rounded-xl border border-subtle bg-[rgba(var(--fg),0.03)] p-3 text-muted transition hover:bg-[rgba(var(--fg),0.06)] hover:text-[rgb(var(--fg))]"
+              className="focus-ring inline-flex items-center gap-3 rounded-xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] p-3 text-muted transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--custom)]"
               href="https://www.linkedin.com/in/thanhhai-nguyen/"
               target="_blank"
               rel="noreferrer"
@@ -49,7 +49,7 @@ export function ContactSection() {
               <FiLinkedin /> LinkedIn
             </a>
             <a
-              className="focus-ring inline-flex items-center gap-3 rounded-xl border border-subtle bg-[rgba(var(--fg),0.03)] p-3 text-muted transition hover:bg-[rgba(var(--fg),0.06)] hover:text-[rgb(var(--fg))]"
+              className="focus-ring inline-flex items-center gap-3 rounded-xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] p-3 text-muted transition hover:bg-[rgba(var(--fg-rgb),0.06)] hover:text-[var(--custom)]"
               href="https://github.com/nguyenhaia8/"
               target="_blank"
               rel="noreferrer"
@@ -90,7 +90,7 @@ export function ContactSection() {
                     required
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                    className="focus-ring h-11 rounded-xl border border-subtle bg-[rgb(var(--card))] px-3 text-sm"
+                    className="focus-ring h-11 rounded-xl border border-subtle bg-[var(--card)] px-3 text-sm"
                     placeholder="Your name"
                   />
                 </label>
@@ -101,7 +101,7 @@ export function ContactSection() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                    className="focus-ring h-11 rounded-xl border border-subtle bg-[rgb(var(--card))] px-3 text-sm"
+                    className="focus-ring h-11 rounded-xl border border-subtle bg-[var(--card)] px-3 text-sm"
                     placeholder="you@company.com"
                   />
                 </label>
@@ -112,7 +112,7 @@ export function ContactSection() {
                   required
                   value={form.message}
                   onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                  className="focus-ring min-h-[140px] resize-none rounded-xl border border-subtle bg-[rgb(var(--card))] p-3 text-sm"
+                  className="focus-ring min-h-[140px] resize-none rounded-xl border border-subtle bg-[var(--card)] p-3 text-sm"
                   placeholder="Tell me about the role or project..."
                 />
               </label>
@@ -120,7 +120,7 @@ export function ContactSection() {
               <div className="mt-2 flex items-center justify-between gap-3">
                 <p className="text-sm text-muted">
                   {status === 'sent' ? (
-                    <span className="text-[rgb(var(--fg))]">Message ready to send (demo).</span>
+                    <span className="text-[var(--fg)]">Message ready to send (demo).</span>
                   ) : (
                     'This form is a lightweight demo—wire it to your backend when ready.'
                   )}

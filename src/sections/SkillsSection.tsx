@@ -24,8 +24,8 @@ function SkillCard({ title, icon }: { title: string; icon: ReactNode }) {
     <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.18 }}>
       <Card className="h-full p-4">
         <div className="flex items-center gap-3">
-          <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-subtle bg-[rgba(var(--fg),0.03)]">
-            <span className="text-[rgb(var(--fg))]">{icon}</span>
+          <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)]">
+            <span className="text-[var(--custom)]">{icon}</span>
           </div>
           <div>
             <p className="text-sm font-medium tracking-tight">{title}</p>

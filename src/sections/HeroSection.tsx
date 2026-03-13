@@ -21,10 +21,13 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
             className="inline-flex flex-wrap items-center gap-2"
           >
-            <Badge className="border-none bg-[rgb(var(--primary))] text-white shadow-sm">
+            <Badge className="border-none bg-[var(--primary)] text-white shadow-sm text-[14px]">
               Available for US-based roles
             </Badge>
-            <Badge className="bg-[rgba(var(--bg),0.85)] text-[rgb(var(--fg))]">
+            {/* <Badge className="border-none bg-[var(--primary)] text-white shadow-sm">
+              React · Next.js · TypeScript
+            </Badge> */}
+            <Badge className="bg-[rgba(var(--bg-rgb),0.85)] text-[var(--fg)] text-[14px]">
               React · TypeScript · UI Engineering
             </Badge>
           </motion.div>
@@ -79,7 +82,7 @@ export function HeroSection() {
               <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
               Open to interviews
             </span>
-            <span className="hidden h-1 w-1 rounded-full bg-[rgb(var(--border))] sm:inline" />
+            <span className="hidden h-1 w-1 rounded-full bg-[var(--border)] sm:inline" />
             <span>Focus: performance, UX polish, maintainable architecture</span>
           </motion.div>
         </div>
@@ -89,27 +92,27 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.08 }}
-            className="relative overflow-hidden rounded-3xl border border-subtle bg-[rgb(var(--card))] p-6 shadow-[var(--shadow)]"
+            className="relative overflow-hidden rounded-3xl border border-subtle bg-[var(--card)] p-6 shadow-[var(--shadow)]"
           >
-            <div className="absolute inset-0 opacity-80 [background:radial-gradient(circle_at_20%_20%,rgba(var(--primary),0.22),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(var(--primary-2),0.18),transparent_55%)]" />
+            <div className="absolute inset-0 opacity-80 [background:radial-gradient(circle_at_20%_20%,rgba(var(--primary-rgb),0.22),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(var(--primary-2-rgb),0.18),transparent_55%)]" />
             <div className="relative">
               <div className="flex items-center justify-between">
-                <p className="text-sm font-medium tracking-tight">
+                <p className="text-sm font-medium tracking-tight text-muted">
                   Highlight reel
                 </p>
-                <span className="rounded-full border border-subtle bg-[rgba(var(--fg),0.03)] px-3 py-1 text-xs text-muted">
+                <span className="rounded-full border border-subtle bg-[rgba(var(--fg-rgb),0.03)] px-3 py-1 text-xs text-muted">
                   2020–2025
                 </span>
               </div>
               <ul className="mt-5 grid gap-3 text-sm text-muted">
-                <li className="rounded-2xl border border-subtle bg-[rgba(var(--fg),0.03)] p-4">
+                <li className="rounded-2xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] p-4">
                   Built scalable React platforms across e-commerce, blockchain,
                   and gaming.
                 </li>
-                <li className="rounded-2xl border border-subtle bg-[rgba(var(--fg),0.03)] p-4">
+                <li className="rounded-2xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] p-4">
                   Shipped performance improvements aligned with Core Web Vitals.
                 </li>
-                <li className="rounded-2xl border border-subtle bg-[rgba(var(--fg),0.03)] p-4">
+                <li className="rounded-2xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)] p-4">
                   Strong UX craft: micro-interactions, accessibility, responsive
                   systems.
                 </li>

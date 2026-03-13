@@ -16,7 +16,7 @@ export function AboutSection() {
         <Card className="p-6 lg:col-span-7">
           <div className="space-y-4 text-left text-sm text-muted sm:text-base">
             <p>
-              I’m a frontend engineer with <span className="text-[rgb(var(--fg))] font-medium">5+ years</span>{' '}
+              I’m a frontend engineer with <span className="text-[var(--custom)] font-medium">5+ years</span>{' '}
               of experience building modern web apps with React, TypeScript, and
               the broader JavaScript ecosystem. I’ve shipped scalable
               user-facing features across industries like e-commerce, blockchain,
@@ -25,7 +25,7 @@ export function AboutSection() {
             <p>
               I specialize in building design systems, component libraries, and
               high-performance UI workflows. I’m especially focused on{' '}
-              <span className="text-[rgb(var(--fg))] font-medium">Core Web Vitals</span>, runtime efficiency, and
+              <span className="text-[var(--custom)] font-medium">Core Web Vitals</span>, runtime efficiency, and
               maintainable code patterns that help teams move fast without
               breaking quality.
             </p>
@@ -62,7 +62,7 @@ export function AboutSection() {
                 ].map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-subtle bg-[rgba(var(--fg),0.03)] px-3 py-1 text-sm text-muted"
+                    className="rounded-full border border-subtle bg-[rgba(var(--fg-rgb),0.03)] px-3 py-1 text-sm text-muted"
                   >
                     {t}
                   </span>

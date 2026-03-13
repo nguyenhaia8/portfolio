@@ -73,9 +73,9 @@ const projects: Project[] = [
 
 function ScreenshotPlaceholder({ title }: { title: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-subtle bg-[rgba(var(--fg),0.03)]">
+    <div className="relative overflow-hidden rounded-2xl border border-subtle bg-[rgba(var(--fg-rgb),0.03)]">
       <div className="aspect-[16/10] w-full" />
-      <div className="absolute inset-0 opacity-80 [background:radial-gradient(circle_at_20%_25%,rgba(var(--primary),0.18),transparent_55%),radial-gradient(circle_at_80%_35%,rgba(var(--primary-2),0.16),transparent_55%)]" />
+      <div className="absolute inset-0 opacity-80 [background:radial-gradient(circle_at_20%_25%,rgba(var(--primary-rgb),0.18),transparent_55%),radial-gradient(circle_at_80%_35%,rgba(var(--primary-2-rgb),0.16),transparent_55%)]" />
       <div className="absolute inset-0 flex items-center justify-center">
         <p className="text-xs font-medium tracking-wide text-muted">
           Screenshot placeholder · {title}
@@ -118,8 +118,8 @@ export function ProjectsSection() {
                   <div
                     className={cn(
                       'hidden h-10 w-10 items-center justify-center rounded-2xl border border-subtle',
-                      'bg-[rgba(var(--fg),0.03)] text-[rgb(var(--fg))] transition',
-                      'group-hover:bg-[rgba(var(--fg),0.06)] sm:flex',
+                      'bg-[rgba(var(--fg-rgb),0.03)] text-[var(--custom)] transition',
+                      'group-hover:bg-[rgba(var(--fg-rgb),0.06)] sm:flex',
                     )}
                   >
                     <FiExternalLink />
@@ -135,7 +135,7 @@ export function ProjectsSection() {
                 <ul className="grid gap-1 text-sm text-muted sm:grid-cols-2">
                   {p.features.map((f) => (
                     <li key={f} className="inline-flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[rgba(var(--primary),0.9)]" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[rgba(var(--primary-rgb),0.9)]" />
                       <span>{f}</span>
                     </li>
                   ))}
